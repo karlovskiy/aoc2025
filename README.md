@@ -25,6 +25,23 @@ Found 7 outliers among 100 measurements (7.00%)
   5 (5.00%) high severe
 ```
 
+## Day 2: Gift Shop
+
+```
+$ cargo bench --bench gift_shop
+    Finished `bench` profile [optimized] target(s) in 0.02s
+     Running benches/gift_shop.rs (target/release/deps/gift_shop-f4abd9f5a159c792)
+Gift Shop (Part 1)      time:   [8.0815 ms 8.1051 ms 8.1301 ms]
+                        change: [−0.5208% −0.0531% +0.4205%] (p = 0.82 > 0.05)
+                        No change in performance detected.
+
+Gift Shop (Part 2)      time:   [20.146 ms 20.203 ms 20.262 ms]
+                        change: [−0.3082% +0.1179% +0.5152%] (p = 0.58 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  4 (4.00%) high mild
+```
+
 ## Benchmarks CPU
 ```
 12th Gen Intel(R) Core(TM) i7-12700H (20) @ 4.70 GHz
