@@ -1,5 +1,4 @@
 use crate::debug_println;
-use std::collections::HashSet;
 pub fn part_one(data: &[u8]) -> u64 {
     calc_invalid_ids(data, false)
 }
@@ -9,9 +8,9 @@ pub fn part_two(data: &[u8]) -> u64 {
 }
 
 fn calc_invalid_ids(data: &[u8], new_rules: bool) -> u64 {
-    let mut invalid_ids = HashSet::new();
     let [mut a, mut b, mut x, mut prev_idx] = [0; 4];
     let mut prev = 0;
+    let mut result = 0;
     for (i, &c) in data.iter().enumerate() {
         if c == b'-' {
             b = prev_idx;
@@ -27,9 +26,9 @@ fn calc_invalid_ids(data: &[u8], new_rules: bool) -> u64 {
                 .parse::<u64>()
                 .unwrap();
             if new_rules {
-                calc_range_part_two(&mut invalid_ids, start, end)
+                result += calc_range_part_two(start, end)
             } else {
-                calc_range_part_one(&mut invalid_ids, start, end);
+                result += calc_range_part_one(start, end);
             }
         } else if prev == b',' {
             a = i;
@@ -37,18 +36,18 @@ fn calc_invalid_ids(data: &[u8], new_rules: bool) -> u64 {
         prev_idx = i;
         prev = c;
     }
-    let result: u64 = invalid_ids.iter().sum();
     result
 }
 
-fn calc_range_part_one(invalid_ids: &mut HashSet<u64>, start: u64, end: u64) {
+fn calc_range_part_one(start: u64, end: u64) -> u64 {
     debug_println!("{} - {}", start, end);
     let mut digits = [0u8; 20];
     let start_len = to_digits(start, &mut digits);
     let end_len = to_digits(end, &mut digits);
     if start_len % 2 != 0 && start_len == end_len {
-        return;
+        return 0;
     }
+    let mut result = 0;
     for x in start..=end {
         let len = to_digits(x, &mut digits);
         if len % 2 != 0 {
@@ -65,15 +64,17 @@ fn calc_range_part_one(invalid_ids: &mut HashSet<u64>, start: u64, end: u64) {
             }
         }
         if invalid {
-            invalid_ids.insert(x);
+            result += x;
             debug_println!("  invalid: {}", x);
         }
     }
+    result
 }
 
-fn calc_range_part_two(invalid_ids: &mut HashSet<u64>, start: u64, end: u64) {
+fn calc_range_part_two(start: u64, end: u64) -> u64 {
     debug_println!("{} - {}", start, end);
     let mut digits = [0u8; 20];
+    let mut result = 0;
     for x in start..=end {
         let len = to_digits(x, &mut digits);
         let mid = len / 2;
@@ -95,10 +96,11 @@ fn calc_range_part_two(invalid_ids: &mut HashSet<u64>, start: u64, end: u64) {
             }
         }
         if invalid {
-            invalid_ids.insert(x);
+            result += x;
             debug_println!("  invalid: {}", x);
         }
     }
+    result
 }
 
 fn to_digits(mut x: u64, digits: &mut [u8]) -> usize {
