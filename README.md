@@ -4,7 +4,6 @@ https://adventofcode.com/2025
 ## Day 1: Secret Entrance
 ```
 $ cargo bench --bench secret_entrance_bench
-   Compiling aoc2025 v0.1.0 (/github/aoc2025)
     Finished `bench` profile [optimized] target(s) in 0.78s
      Running benches/secret_entrance_bench.rs (target/release/deps/secret_entrance_bench-66bab52faee55eac)
 Secret Entrance (Part 1)
@@ -28,8 +27,7 @@ Found 7 outliers among 100 measurements (7.00%)
 ## Day 2: Gift Shop
 
 ```
-$ cargo bench --bench gift_shop
-   Compiling aoc2025 v0.1.0 (/github/aoc2025)
+$ cargo bench --bench gift_shop_bench
     Finished `bench` profile [optimized] target(s) in 0.97s
      Running benches/gift_shop.rs (target/release/deps/gift_shop-f4abd9f5a159c792)
 Gift Shop (Part 1)      time:   [7.5651 ms 7.5942 ms 7.6252 ms]
@@ -43,6 +41,26 @@ Gift Shop (Part 2)      time:   [20.471 ms 20.532 ms 20.598 ms]
                         Change within noise threshold.
 Found 1 outliers among 100 measurements (1.00%)
   1 (1.00%) high severe
+```
+
+## Day 3: Lobby
+```
+$ cargo bench --bench lobby_bench
+    Finished `bench` profile [optimized] target(s) in 0.02s
+     Running benches/lobby_bench.rs (target/release/deps/lobby_bench-5e746f6a67708e57)
+Lobby (Part 1)          time:   [36.960 µs 37.033 µs 37.116 µs]
+                        change: [−1.1904% −0.4690% +0.0217%] (p = 0.15 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+
+Lobby (Part 2)          time:   [65.261 µs 65.348 µs 65.443 µs]
+                        change: [−0.7240% −0.2136% +0.2711%] (p = 0.43 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
 ```
 
 ## Benchmarks CPU

@@ -13,5 +13,9 @@ name = "secret_entrance_bench"
 harness = false
 
 [[bench]]
-name = "gift_shop"
+name = "gift_shop_bench"
+harness = false
+
+[[bench]]
+name = "lobby_bench"
 harness = false
