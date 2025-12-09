@@ -31,6 +31,7 @@ fn calc_bank_joltage(bank: &mut Vec<u8>, n: usize) -> u64 {
             let x = bank[j];
             if x == 9 {
                 pos = j;
+                max = x;
                 break;
             }
             if x > max {
@@ -39,9 +40,9 @@ fn calc_bank_joltage(bank: &mut Vec<u8>, n: usize) -> u64 {
             }
         }
         if i == n - 1 {
-            result += bank[pos] as u64;
+            result += max as u64;
         } else {
-            result += bank[pos] as u64 * 10u64.pow((n - i - 1) as u32)
+            result += max as u64 * 10u64.pow((n - i - 1) as u32)
         }
         pos += 1;
     }

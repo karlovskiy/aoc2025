@@ -46,21 +46,21 @@ Found 1 outliers among 100 measurements (1.00%)
 ## Day 3: Lobby
 ```
 $ cargo bench --bench lobby_bench
-    Finished `bench` profile [optimized] target(s) in 0.02s
+    Finished `bench` profile [optimized] target(s) in 0.88s
      Running benches/lobby_bench.rs (target/release/deps/lobby_bench-5e746f6a67708e57)
-Lobby (Part 1)          time:   [36.960 µs 37.033 µs 37.116 µs]
-                        change: [−1.1904% −0.4690% +0.0217%] (p = 0.15 > 0.05)
-                        No change in performance detected.
-Found 7 outliers among 100 measurements (7.00%)
-  2 (2.00%) high mild
-  5 (5.00%) high severe
+Lobby (Part 1)          time:   [36.860 µs 36.921 µs 36.983 µs]
+                        change: [−0.6848% −0.3786% −0.0764%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) high mild
+  1 (1.00%) high severe
 
-Lobby (Part 2)          time:   [65.261 µs 65.348 µs 65.443 µs]
-                        change: [−0.7240% −0.2136% +0.2711%] (p = 0.43 > 0.05)
-                        No change in performance detected.
-Found 6 outliers among 100 measurements (6.00%)
-  3 (3.00%) high mild
-  3 (3.00%) high severe
+Lobby (Part 2)          time:   [65.467 µs 65.567 µs 65.681 µs]
+                        change: [−6.9957% −4.8632% −2.8611%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 10 outliers among 100 measurements (10.00%)
+  8 (8.00%) high mild
+  2 (2.00%) high severe
 ```
 
 ## Benchmarks CPU
