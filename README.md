@@ -65,7 +65,7 @@ Found 10 outliers among 100 measurements (10.00%)
 
 ## Day 4: Printing Department
 ```
-ravenstar@hilbert ~/sources/github/aoc2025 $ cargo bench --bench printing_department_bench
+$ cargo bench --bench printing_department_bench
     Finished `bench` profile [optimized] target(s) in 0.05s
      Running benches/printing_department_bench.rs (target/release/deps/printing_department_bench-e1da8579ec63c32e)
 Printing Department (Part 1)
