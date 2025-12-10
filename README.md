@@ -63,6 +63,27 @@ Found 10 outliers among 100 measurements (10.00%)
   2 (2.00%) high severe
 ```
 
+## Day 4: Printing Department
+```
+ravenstar@hilbert ~/sources/github/aoc2025 $ cargo bench --bench printing_department_bench
+    Finished `bench` profile [optimized] target(s) in 0.05s
+     Running benches/printing_department_bench.rs (target/release/deps/printing_department_bench-e1da8579ec63c32e)
+Printing Department (Part 1)
+                        time:   [121.54 µs 121.87 µs 122.19 µs]
+                        change: [+0.5992% +1.4666% +2.4950%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) high mild
+  9 (9.00%) high severe
+
+Printing Department (Part 2)
+                        time:   [13.546 ms 13.565 ms 13.586 ms]
+                        change: [−0.3173% −0.0916% +0.1287%] (p = 0.42 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+```
 ## Benchmarks CPU
 ```
 12th Gen Intel(R) Core(TM) i7-12700H (20) @ 4.70 GHz

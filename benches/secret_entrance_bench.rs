@@ -5,7 +5,7 @@ use criterion::{criterion_group, criterion_main, Criterion};
 pub fn part_one_benchmark(c: &mut Criterion) {
     let data = include_str!("../src/testdata/secret_entrance/input");
     c.bench_function("Secret Entrance (Part 1)", |b| {
-        b.iter(|| secret_entrance::part_one(data))
+        b.iter(|| secret_entrance::part_one(hint::black_box(data)))
     });
 }
 

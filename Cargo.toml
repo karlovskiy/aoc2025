@@ -19,3 +19,8 @@ harness = false
 [[bench]]
 name = "lobby_bench"
 harness = false
+
+[[bench]]
+name = "printing_department_bench"
+harness = false
+
