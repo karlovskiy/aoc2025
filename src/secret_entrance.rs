@@ -1,5 +1,3 @@
-use crate::debug_print;
-use crate::debug_println;
 pub fn part_one(data: &str) -> u64 {
     calc_pwd(data, false)
 }

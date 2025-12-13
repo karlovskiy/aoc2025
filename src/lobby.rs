@@ -1,4 +1,3 @@
-use crate::debug_println;
 
 pub fn part_one(data: &[u8]) -> u64 {
     calc_total_joltage(data, 2)

@@ -69,20 +69,17 @@ $ cargo bench --bench printing_department_bench
     Finished `bench` profile [optimized] target(s) in 0.05s
      Running benches/printing_department_bench.rs (target/release/deps/printing_department_bench-e1da8579ec63c32e)
 Printing Department (Part 1)
-                        time:   [121.54 µs 121.87 µs 122.19 µs]
-                        change: [+0.5992% +1.4666% +2.4950%] (p = 0.00 < 0.05)
+                        time:   [121.95 µs 122.28 µs 122.61 µs]
+                        change: [−2.0778% −1.0651% −0.2805%] (p = 0.01 < 0.05)
                         Change within noise threshold.
-Found 10 outliers among 100 measurements (10.00%)
-  1 (1.00%) high mild
-  9 (9.00%) high severe
 
 Printing Department (Part 2)
-                        time:   [13.546 ms 13.565 ms 13.586 ms]
-                        change: [−0.3173% −0.0916% +0.1287%] (p = 0.42 > 0.05)
-                        No change in performance detected.
-Found 4 outliers among 100 measurements (4.00%)
-  2 (2.00%) high mild
-  2 (2.00%) high severe
+                        time:   [19.111 µs 19.130 µs 19.149 µs]
+                        change: [−99.859% −99.858% −99.857%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
 ```
 ## Benchmarks CPU
 ```
