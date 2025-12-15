@@ -24,3 +24,6 @@ harness = false
 name = "printing_department_bench"
 harness = false
 
+[[bench]]
+name = "cafeteria_bench"
+harness = false

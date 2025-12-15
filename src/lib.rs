@@ -18,3 +18,4 @@ pub mod secret_entrance;
 pub mod gift_shop;
 pub mod lobby;
 pub mod printing_department;
+pub mod cafeteria;
