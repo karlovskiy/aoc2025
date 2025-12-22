@@ -27,3 +27,7 @@ harness = false
 [[bench]]
 name = "cafeteria_bench"
 harness = false
+
+[[bench]]
+name = "trash_compactor_bench"
+harness = false

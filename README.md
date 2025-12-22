@@ -81,6 +81,22 @@ Cafeteria (Part 2)      time:   [8.4427 µs 8.4514 µs 8.4606 µs]
                         Change within noise threshold.
 ```
 
+## Day6: Trash Compactor
+```
+cargo bench --bench trash_compactor_bench
+    Finished `bench` profile [optimized] target(s) in 0.02s
+     Running benches/trash_compactor_bench.rs (target/release/deps/trash_compactor_bench-3b7d0db9b5c8d393)
+Trash Compactor (Part 1)
+                        time:   [30.732 µs 30.767 µs 30.802 µs]
+                        change: [−2.0772% −0.3410% +1.0561%] (p = 0.71 > 0.05)
+                        No change in performance detected.
+
+Trash Compactor (Part 2)
+                        time:   [29.825 µs 29.860 µs 29.896 µs]
+                        change: [+0.0285% +0.5442% +0.9504%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+```
+
 ## Benchmarks CPU
 ```
 12th Gen Intel(R) Core(TM) i7-12700H (20) @ 4.70 GHz
