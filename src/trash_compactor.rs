@@ -6,7 +6,7 @@ pub fn part_one(data: &[u8]) -> u64 {
     let mut k = 0;
     let mut num: u64 = 0;
     for i in 0..len {
-        let b = data[i];
+        let b = unsafe { *data.get_unchecked(i) };
         if b == b' ' || b == b'\n' {
             if num == 0 {
                 continue;
@@ -41,32 +41,34 @@ pub fn part_two(data: &[u8]) -> u64 {
     let n = data.iter().position(|&b| b == b'\n').unwrap() + 1;
     let len = data.len();
     let mut is_sum = true;
-    let mut nums: Vec<u64> = vec![];
+    let mut col_sum: u64 = 0;
+    let mut col_prod: u64 = 1;
     for i in 0..n {
-        let mut step = 0;
+        let mut step = i;
         let mut num = 0;
         while step < len {
-            let b = data[i + step];
-            if b == b'*' {
+            let b = unsafe { *data.get_unchecked(step) };
+            if b.is_ascii_digit() {
+                num = num * 10 + (b - b'0') as u64;
+            } else if b == b'*' {
                 is_sum = false;
             } else if b == b'+' {
                 is_sum = true;
-            } else if b >= b'0' && b <= b'9' {
-                num = num * 10 + (b - b'0') as u64;
             }
             step += n;
         }
         if num != 0 {
-            nums.push(num);
+            col_sum += num;
+            col_prod *= num;
         }
         if num == 0 || i == n - 1 {
-            let col_result: u64 = match is_sum {
-                true => nums.iter().sum(),
-                false => nums.iter().product(),
-            };
-            result += col_result;
-            debug_println!("col result: {}, nums: {:?}", col_result, nums);
-            nums.clear();
+            if is_sum {
+                result += col_sum;
+            } else {
+                result += col_prod;
+            }
+            col_sum = 0;
+            col_prod = 1;
         }
     }
     result
