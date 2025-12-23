@@ -84,11 +84,11 @@ Cafeteria (Part 2)      time:   [8.4427 µs 8.4514 µs 8.4606 µs]
 ## Day6: Trash Compactor
 ```
 cargo bench --bench trash_compactor_bench
-    Finished `bench` profile [optimized] target(s) in 0.91s
+    Finished `bench` profile [optimized] target(s) in 0.93s
      Running benches/trash_compactor_bench.rs (target/release/deps/trash_compactor_bench-3b7d0db9b5c8d393)
 Trash Compactor (Part 1)
-                        time:   [29.089 µs 29.138 µs 29.186 µs]
-                        change: [−6.9054% −6.1399% −5.5063%] (p = 0.00 < 0.05)
+                        time:   [24.580 µs 25.320 µs 26.531 µs]
+                        change: [−14.290% −12.991% −11.469%] (p = 0.00 < 0.05)
                         Performance has improved.
 
 Trash Compactor (Part 2)

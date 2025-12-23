@@ -7,29 +7,28 @@ pub fn part_one(data: &[u8]) -> u64 {
     let mut num: u64 = 0;
     for i in 0..len {
         let b = unsafe { *data.get_unchecked(i) };
-        if b == b' ' || b == b'\n' {
+        if b.is_ascii_digit() {
+            num = num * 10 + (b - b'0') as u64;
+        } else if b == b' ' || b == b'\n' {
             if num == 0 {
                 continue;
             }
             if k >= sums.len() {
                 sums.push(num);
-            } else {
-                sums[k] += num;
-            }
-            if k >= mults.len() {
                 mults.push(num);
             } else {
-                mults[k] *= num;
+                unsafe {
+                    *sums.get_unchecked_mut(k) += num;
+                    *mults.get_unchecked_mut(k) *= num;
+                }
             }
             num = 0;
             k = if b == b'\n' { 0 } else { k + 1 };
-        } else if b >= b'0' && b <= b'9' {
-            num = num * 10 + (b - b'0') as u64;
         } else if b == b'*' {
-            result += mults[k];
+            result += unsafe { *mults.get_unchecked(k) };
             k += 1;
         } else if b == b'+' {
-            result += sums[k];
+            result += unsafe { *sums.get_unchecked(k) };
             k += 1;
         }
     }
