@@ -16,5 +16,17 @@ pub fn part_two_benchmark(c: &mut Criterion) {
     });
 }
 
-criterion_group!(benches, part_one_benchmark, part_two_benchmark);
+pub fn part_two_recursion_benchmark(c: &mut Criterion) {
+    let data = include_bytes!("../src/testdata/laboratories/input");
+    c.bench_function("Laboratories (Part 2) Recursion)", |b| {
+        b.iter(|| laboratories::part_two_recursion(hint::black_box(data)))
+    });
+}
+
+criterion_group!(
+    benches,
+    part_one_benchmark,
+    part_two_benchmark,
+    part_two_recursion_benchmark
+);
 criterion_main!(benches);

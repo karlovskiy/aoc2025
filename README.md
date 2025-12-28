@@ -89,14 +89,18 @@ Trash Compactor (Part 2)
 ## Day 7: Laboratories
 ```
 $ cargo bench --bench laboratories_bench
-    Finished `bench` profile [optimized] target(s) in 0.02s
+    Finished `bench` profile [optimized] target(s) in 0.89s
      Running benches/laboratories_bench.rs (target/release/deps/laboratories_bench-7da34db278a43df3)
 
-Laboratories (Part 1)   time:   [5.5383 µs 5.5671 µs 5.5979 µs]
-                        change: [+0.5872% +1.1614% +1.7673%] (p = 0.00 < 0.05)
+Laboratories (Part 1)   time:   [5.4354 µs 5.4472 µs 5.4611 µs]
+                        change: [−6.1360% −4.6607% −2.9033%] (p = 0.00 < 0.05)
 
-Laboratories (Part 2)   time:   [16.058 µs 16.099 µs 16.166 µs]
-                        change: [−1.7784% −1.2266% −0.6154%] (p = 0.00 < 0.05)
+Laboratories (Part 2)   time:   [6.3305 µs 6.3377 µs 6.3445 µs]
+                        change: [+0.2521% +0.4948% +0.7880%] (p = 0.00 < 0.05)
+
+Laboratories (Part 2) Recursion)
+                        time:   [13.837 µs 13.854 µs 13.870 µs]
+                        change: [+0.6289% +0.8916% +1.1701%] (p = 0.00 < 0.05)
 ```
 
 ## Benchmarks CPU
