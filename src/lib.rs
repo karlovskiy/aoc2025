@@ -20,3 +20,4 @@ pub mod lobby;
 pub mod printing_department;
 pub mod cafeteria;
 pub mod trash_compactor;
+pub mod laboratories;
