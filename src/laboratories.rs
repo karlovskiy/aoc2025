@@ -103,6 +103,20 @@ mod tests {
     use super::*;
 
     #[test]
+    fn part_one_example() {
+        let data = include_bytes!("testdata/laboratories/example");
+        let result = part_one(data);
+        assert_eq!(result, 21);
+    }
+
+    #[test]
+    fn part_one_input() {
+        let data = include_bytes!("testdata/laboratories/input");
+        let result = part_one(data);
+        assert_eq!(result, 1553);
+    }
+
+    #[test]
     fn part_two_example() {
         let data = include_bytes!("testdata/laboratories/example");
         let result = part_two(data);
