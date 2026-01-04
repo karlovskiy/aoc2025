@@ -86,27 +86,29 @@ pub fn part_two(data: &str) -> u64 {
 fn parse_boxes(data: &str) -> Vec<(isize, isize, isize, u64)> {
     let mut boxes = Vec::new();
     for line in data.lines() {
-        let coords = line
-            .split(',')
-            .map(|x| x.parse::<isize>().unwrap())
-            .collect::<Vec<isize>>();
-        boxes.push((coords[0], coords[1], coords[2], 0));
+        let mut coords = line.split(',');
+        let x = coords.next().unwrap().parse().unwrap();
+        let y = coords.next().unwrap().parse().unwrap();
+        let z = coords.next().unwrap().parse().unwrap();
+        boxes.push((x, y, z, 0));
     }
     boxes
 }
 
-fn calc_distances(boxes: &Vec<(isize, isize, isize, u64)>) -> Vec<(usize, usize, f64)> {
+fn calc_distances(boxes: &Vec<(isize, isize, isize, u64)>) -> Vec<(usize, usize, u64)> {
     let mut distances = Vec::new();
     for i in 0..boxes.len() {
         for j in i + 1..boxes.len() {
             let x = boxes[i];
             let y = boxes[j];
-            let distance =
-                (((x.0 - y.0).pow(2) + (x.1 - y.1).pow(2) + (x.2 - y.2).pow(2)) as f64).sqrt();
-            distances.push((i, j, distance));
+            let dx = x.0.abs_diff(y.0) as u64;
+            let dy = x.1.abs_diff(y.1) as u64;
+            let dz = x.2.abs_diff(y.2) as u64;
+            let distance_sq = dx * dx + dy * dy + dz * dz;
+            distances.push((i, j, distance_sq));
         }
     }
-    distances.sort_by(|a, b| a.2.partial_cmp(&b.2).unwrap());
+    distances.sort_unstable_by_key(|a| a.2);
     distances
 }
 

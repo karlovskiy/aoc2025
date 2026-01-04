@@ -106,14 +106,13 @@ Laboratories (Part 2 Recursion)
 ## Day 8: Playground
 ```
 $ cargo bench --bench playground_bench
-    Finished `bench` profile [optimized] target(s) in 0.92s
+    Finished `bench` profile [optimized] target(s) in 0.93s
      Running benches/playground_bench.rs (target/release/deps/playground_bench-8859fae8136644a5)
-     
-Playground (Part 1)     time:   [22.043 ms 22.165 ms 22.308 ms]
-                        change: [−1.2933% −0.3878% +0.5201%] (p = 0.42 > 0.05)
+Playground (Part 1)     time:   [13.032 ms 13.128 ms 13.241 ms]
+                        change: [−41.356% −40.771% −40.205%] (p = 0.00 < 0.05)
 
-Playground (Part 2)     time:   [22.233 ms 22.362 ms 22.512 ms]
-                        change: [−0.7412% +0.0787% +0.9544%] (p = 0.86 > 0.05)
+Playground (Part 2)     time:   [13.273 ms 13.388 ms 13.520 ms]
+                        change: [−40.789% −40.129% −39.475%] (p = 0.00 < 0.05)
 ```
 
 ## Benchmarks CPU
