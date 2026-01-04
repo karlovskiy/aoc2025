@@ -35,3 +35,7 @@ harness = false
 [[bench]]
 name = "laboratories_bench"
 harness = false
+
+[[bench]]
+name = "playground_bench"
+harness = false

@@ -98,9 +98,22 @@ Laboratories (Part 1)   time:   [5.4354 µs 5.4472 µs 5.4611 µs]
 Laboratories (Part 2)   time:   [6.3305 µs 6.3377 µs 6.3445 µs]
                         change: [+0.2521% +0.4948% +0.7880%] (p = 0.00 < 0.05)
 
-Laboratories (Part 2) Recursion)
+Laboratories (Part 2 Recursion)
                         time:   [13.837 µs 13.854 µs 13.870 µs]
                         change: [+0.6289% +0.8916% +1.1701%] (p = 0.00 < 0.05)
+```
+
+## Day 8: Playground
+```
+$ cargo bench --bench playground_bench
+    Finished `bench` profile [optimized] target(s) in 0.92s
+     Running benches/playground_bench.rs (target/release/deps/playground_bench-8859fae8136644a5)
+     
+Playground (Part 1)     time:   [22.043 ms 22.165 ms 22.308 ms]
+                        change: [−1.2933% −0.3878% +0.5201%] (p = 0.42 > 0.05)
+
+Playground (Part 2)     time:   [22.233 ms 22.362 ms 22.512 ms]
+                        change: [−0.7412% +0.0787% +0.9544%] (p = 0.86 > 0.05)
 ```
 
 ## Benchmarks CPU
